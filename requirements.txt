@@ -1,0 +1,26 @@
+# Core numerics & data handling
+numpy
+pandas
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Machine Learning - Tree-based models
+xgboost
+lightgbm
+catboost
+
+# Machine Learning - scikit-learn
+scikit-learn
+
+# Notebook tooling
+jupyterlab
+ipykernel
+
+# Model persistence
+joblib
+
+# GUI (included with Python, but listed for documentation)
+# tkinter - included with Python standard library
