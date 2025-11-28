@@ -49,7 +49,7 @@ The project implements **two distinct approaches**:
    - Weighted ensemble of XGBoost, LightGBM, and CatBoost
    - Instant top-3 fertilizer recommendations
 
-> ℹ️ **Note:** The main HMIS dataset is stored using **Git LFS**.  
+> ℹ️ **Note:** The main dataset is stored using **Git LFS**.  
 > You **must** have Git LFS installed and configured, a plain `git clone` will not download the dataset.
 ---
 
@@ -151,7 +151,7 @@ OptimalFertilizer/
 ### Prerequisites
 
 - Git
-- **Git LFS** (required to download the HMIS dataset tracked via LFS)
+- **Git LFS** (required to download the dataset tracked via LFS)
   - Install Git LFS (choose one based on your OS):
     - **macOS (Homebrew)**  
       ```bash
