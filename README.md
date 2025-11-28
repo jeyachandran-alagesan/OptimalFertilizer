@@ -12,6 +12,7 @@ Machine learning pipeline for predicting **optimal fertilizer recommendations** 
 - [Repository Structure](#repository-structure)
 - [Data Flow & Architecture](#data-flow--architecture)
 - [Local Setup (Linux / macOS)](#local-setup-linux--macos)
+- [Local Setup (Windows)](#local-setup-Windows)
 - [Running the Notebooks](#running-the-notebooks)
 - [Model Approaches](#model-approaches)
 - [GUI Application](#gui-application)
@@ -224,25 +225,31 @@ jupyter lab
    - Install Git LFS:
       - **Windows**  
          - Download Git LFS installer from [git-lfs.github.io](https://git-lfs.github.io/)
-         - Or install via Chocolatey: `choco install git-lfs`
-         - Or install via Scoop: `scoop install git-lfs`
-      ```
+         - Or install via Chocolatey: 
+            ```choco install git-lfs```
+         - Or install via Scoop: 
+            ```scoop install git-lfs```
+
 - Python **3.11.14** available as `python` or `py -3.11`  
    (from python.org installer, Microsoft Store, or Chocolatey)
 
 ### 1. Clone the repository
 
-```powershell
+```
+powershell
 git lfs clone <your_repo_url>.git
 cd OptimalFertilizer
 ```
 
 ### 2. Run the setup script
 
-```powershell
+```
+powershell
 .\setup_windows.ps1
-    OR
-   powershell -ExecutionPolicy Bypass -File .\setup_windows.ps1
+ ```
+Alternate command
+```
+powershell -ExecutionPolicy Bypass -File .\setup_windows.ps1
 ```
 
 The script will:
