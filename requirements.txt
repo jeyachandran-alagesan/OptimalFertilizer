@@ -23,4 +23,5 @@ ipykernel
 joblib
 
 # GUI (included with Python, but listed for documentation)
+tk
 # tkinter - included with Python standard library

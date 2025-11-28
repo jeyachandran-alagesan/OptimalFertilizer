@@ -96,7 +96,8 @@ The project implements **two distinct approaches**:
 OptimalFertilizer/
 ├─ README.md                              # Project documentation (this file)
 ├─ requirements.txt                       # Python dependencies
-├─ setup.sh                               # Automated setup script
+├─ setup.sh                               # Automated setup script for Mac/Linux
+├─ setup_windows.ps1                      # Automated setup script for Windows
 ├─ OptimalFertilizer_Approach1.ipynb     # Ensemble approach with EDA
 ├─ OptimalFertilizer_Approach2.ipynb     # XGBoost with feature engineering
 ├─ OptimalFertilizer_GUI.ipynb           # Interactive GUI application
@@ -214,19 +215,101 @@ jupyter lab
 
 ---
 
+## Local Setup (Windows)
+
+### Prerequisites
+
+- Git
+- **Git LFS** (required to download the dataset tracked via LFS)
+   - Install Git LFS:
+      - **Windows**  
+         - Download Git LFS installer from [git-lfs.github.io](https://git-lfs.github.io/)
+         - Or install via Chocolatey: `choco install git-lfs`
+         - Or install via Scoop: `scoop install git-lfs`
+      ```
+- Python **3.11.14** available as `python` or `py -3.11`  
+   (from python.org installer, Microsoft Store, or Chocolatey)
+
+### 1. Clone the repository
+
+```powershell
+git lfs clone <your_repo_url>.git
+cd OptimalFertilizer
+```
+
+### 2. Run the setup script
+
+```powershell
+.\setup_windows.ps1
+    OR
+   powershell -ExecutionPolicy Bypass -File .\setup_windows.ps1
+```
+
+The script will:
+- Create a `.venv` virtual environment using Python 3.11
+- Install all dependencies from `requirements.txt`
+- Install an IPython kernel named `fertilizer_py311`
+- Launch Jupyter Lab in the project directory
+
+---
+
+### Manual Setup (Alternative to `setup_windows.ps1`)
+
+```powershell
+# Create virtual environment
+python -m venv .venv
+# or if you have multiple Python versions:
+# py -3.11 -m venv .venv
+
+# Activate virtual environment
+.\.venv\Scripts\Activate.ps1
+
+# Upgrade pip and install dependencies
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+# Install Jupyter kernel
+python -m ipykernel install --user --name "fertilizer_py311" --display-name "Python 3.11 (Fertilizer)"
+
+# Launch Jupyter Lab
+jupyter lab
+```
+
+**Note:** If you encounter execution policy issues with PowerShell scripts, run:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+---
+
+
 ## Running the Notebooks
 
 ### 1. Activate the virtual environment
 
+**Linux/macOS:**
 ```bash
 source .venv/bin/activate
 ```
 
-### 2. Start Jupyter Lab
+**Windows (Command Prompt):**
+```cmd
+.venv\Scripts\activate.bat
+```
 
+**Windows (PowerShell):**
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### 2. Start Jupyter Lab
+**Linux/macOS/Windows:**
 ```bash
 jupyter lab
 ```
+
+**Note:** The command is the same across all platforms once the virtual environment is activated.
+
 
 ### 3. Select your approach
 
@@ -357,14 +440,28 @@ The GUI notebook provides a user-friendly desktop application for real-time fert
 ### Running the GUI
 
 1. **Activate virtual environment**:
+   
+   **Linux/macOS:**
    ```bash
    source .venv/bin/activate
+   ```
+   
+   **Windows (Command Prompt):**
+   ```cmd
+   .venv\Scripts\activate.bat
+   ```
+   
+   **Windows (PowerShell):**
+   ```powershell
+   .\.venv\Scripts\Activate.ps1
    ```
 
 2. **Launch Jupyter and open GUI notebook**:
    ```bash
    jupyter lab OptimalFertilizer_GUI.ipynb
    ```
+   
+   **Note:** The Jupyter Lab command is the same across all platforms once the virtual environment is activated.
 
 3. **Run the cell** to launch the GUI application
 
