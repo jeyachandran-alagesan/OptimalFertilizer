@@ -107,13 +107,10 @@ OptimalFertilizer/
 │   ├─ train_kaggle.csv                    # Training dataset from kaggle
 │   └─ test_kaggle.csv                     # Test dataset from kaggle
 ├─ models/
-│   ├─ best_xgb.pkl                       # Trained XGBoost model
-│   ├─ best_lgb.pkl                       # Trained LightGBM model
-│   ├─ best_cat.pkl                       # Trained CatBoost model
-│   └─ label_encoder.pkl                  # Label encoder for fertilizer names
-└─ output_dir/
-    ├─ submission_Approach1.csv           # Predictions from Approach 1
-    └─ submission_Approach2.csv           # Predictions from Approach 2
+    ├─ best_xgb.pkl                       # Trained XGBoost model
+    ├─ best_lgb.pkl                       # Trained LightGBM model
+    ├─ best_cat.pkl                       # Trained CatBoost model
+    └─ label_encoder.pkl                  # Label encoder for fertilizer names
 ```
 
 ---
@@ -142,7 +139,7 @@ OptimalFertilizer/
 - Fertilizer Name (7 classes for multi-class classification)
 
 ### Output
-> Note: The Jupyter notebook writes outputs to `output_dir/`.  
+> Note: The Jupyter notebook writes outputs to PROJECT_HOME.  
 - Submission CSV files with top-3 fertilizer recommendations per sample
 - Model evaluation metrics (MAP@3)
 
@@ -153,29 +150,13 @@ OptimalFertilizer/
 ### Prerequisites
 
 - Git
-- **Git LFS** (required to download the dataset tracked via LFS)
-  - Install Git LFS (choose one based on your OS):
-    - **macOS (Homebrew)**  
-      ```bash
-      brew install git-lfs
-      ```
-    - **Linux (Debian/Ubuntu)**  
-      ```bash
-      sudo apt-get update
-      sudo apt-get install git-lfs
-      ```
-    - Or follow the official instructions from the Git LFS site.
-  - Then enable Git LFS (once per machine):
-    ```bash
-    git lfs install
-    ```
 - Python **3.11.14** available as `python3.11`  
   (via pyenv, Homebrew, or system package manager)
 
 ### 1. Clone the repository
 
 ```bash
-git lfs clone <your_repo_url>.git
+git clone <your_repo_url>.git
 cd OptimalFertilizer
 ```
 
@@ -199,7 +180,7 @@ The script will:
 
 ---
 
-### Manual Setup (Alternative to `setup.sh`)
+### Manual Setup (<span style="color: red;">**Alternative to `setup.sh`**</span>)
 
 ```bash
 python3.11 -m venv .venv
@@ -221,15 +202,6 @@ jupyter lab
 ### Prerequisites
 
 - Git
-- **Git LFS** (required to download the dataset tracked via LFS)
-   - Install Git LFS:
-      - **Windows**  
-         - Download Git LFS installer from [git-lfs.github.io](https://git-lfs.github.io/)
-         - Or install via Chocolatey: 
-            ```choco install git-lfs```
-         - Or install via Scoop: 
-            ```scoop install git-lfs```
-
 - Python **3.11.14** available as `python` or `py -3.11`  
    (from python.org installer, Microsoft Store, or Chocolatey)
 
@@ -260,7 +232,7 @@ The script will:
 
 ---
 
-### Manual Setup (Alternative to `setup_windows.ps1`)
+### Manual Setup (<span style="color: red;">**Alternative to `setup_windows.ps1`**</span>)
 
 ```powershell
 # Create virtual environment
@@ -536,13 +508,13 @@ The GUI notebook provides a user-friendly desktop application for real-time fert
 ## Results
 
 ### Approach 1
-- **Output**: `output_dir/submission_Approach1.csv`
+- **Output**: `Approach1.csv`
 - **Score**: MAP@3 = 0.34556
 - **Models**: Ensemble of XGBoost, LightGBM, CatBoost
 - **Validation**: Multiple algorithms with hyperparameter tuning
 
 ### Approach 2
-- **Output**: `output_dir/submission_Approach2.csv`
+- **Output**: `Approach2.csv`
 - **Score**: MAP@3 = 0.3772
 - **Model**: XGBoost with 5-fold CV × 2 bags = 10 models
 - **Training**: GPU-accelerated with categorical support
