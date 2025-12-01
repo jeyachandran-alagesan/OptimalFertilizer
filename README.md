@@ -6,6 +6,8 @@ Machine learning pipeline for predicting **optimal fertilizer recommendations** 
 
 ## Table of Contents
 
+- [Problem Statement](#problem-statement)
+- [Team Members](#Team-Members)
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Technology Stack](#technology-stack)
@@ -18,6 +20,28 @@ Machine learning pipeline for predicting **optimal fertilizer recommendations** 
 - [GUI Application](#gui-application)
 - [Running the Notebook in Google Colab](#running-the-notebook-in-google-colab)
 - [Results](#results)
+
+---
+
+## Problem Statement
+
+Agricultural productivity is heavily dependent on proper fertilizer management, yet farmers often struggle to determine the optimal fertilizer for their specific conditions. Incorrect fertilizer selection can lead to:
+
+- **Reduced crop yields** due to nutrient deficiencies or imbalances
+- **Economic losses** from purchasing ineffective or excessive fertilizers
+- **Environmental damage** from nutrient runoff and soil degradation
+- **Soil health deterioration** over time
+
+---
+
+**Team Members:**
+
+| Name | Roll Number |
+|------|-------------|
+| Jeyachandran Alagesan | 13-19-02-19-52-25-1-26175 |
+| Bharath Kannan M | 13-19-02-19-52-25-1-26151 |
+| Arvind Saproo | 13-19-02-19-52-25-1-26253 |
+| Nandan Bharadwaj M R | 13-19-02-19-52-25-1-26587 |
 
 ---
 
@@ -99,18 +123,19 @@ OptimalFertilizer/
 ├─ requirements.txt                       # Python dependencies
 ├─ setup.sh                               # Automated setup script for Mac/Linux
 ├─ setup_windows.ps1                      # Automated setup script for Windows
-├─ OptimalFertilizer_Approach1.ipynb     # Ensemble approach with EDA
-├─ OptimalFertilizer_Approach2.ipynb     # XGBoost with feature engineering
-├─ OptimalFertilizer_GUI.ipynb           # Interactive GUI application
 ├─ data/
-│   ├─ test_ieee.csv                       # Original training data from ieee
-│   ├─ train_kaggle.csv                    # Training dataset from kaggle
-│   └─ test_kaggle.csv                     # Test dataset from kaggle
+│   ├─ train_ieee.csv                     # Original training data from IEEE
+│   ├─ train_kaggle.csv                   # Training dataset from Kaggle
+│   └─ test_kaggle.csv                    # Test dataset from Kaggle
 ├─ models/
-    ├─ best_xgb.pkl                       # Trained XGBoost model
-    ├─ best_lgb.pkl                       # Trained LightGBM model
-    ├─ best_cat.pkl                       # Trained CatBoost model
-    └─ label_encoder.pkl                  # Label encoder for fertilizer names
+│   ├─ best_xgb.pkl                       # Trained XGBoost model
+│   ├─ best_lgb.pkl                       # Trained LightGBM model
+│   ├─ best_cat.pkl                       # Trained CatBoost model
+│   └─ label_encoder.pkl                  # Label encoder for fertilizer names
+└─ notebooks/
+    ├─ 01-OptimalFertilizer_Approach1.ipynb  # Ensemble approach with EDA
+    ├─ 02-OptimalFertilizer_Approach2.ipynb  # XGBoost with feature engineering
+    └─ 03-OptimalFertilizer_GUI.ipynb        # Interactive GUI application
 ```
 
 ---
@@ -293,19 +318,19 @@ jupyter lab
 ### 3. Select your approach
 
 **For Approach 1 (Ensemble with EDA):**
-- Open `OptimalFertilizer_Approach1.ipynb`
+- Open `notebooks/01-OptimalFertilizer_Approach1.ipynb`
 - Features comprehensive EDA with green-themed visualizations
 - Uses ensemble of XGBoost, LightGBM, and CatBoost
 - Includes hyperparameter tuning with RandomizedSearchCV
 
 **For Approach 2 (XGBoost with Feature Engineering):**
-- Open `OptimalFertilizer_Approach2.ipynb`
+- Open `notebooks/02-OptimalFertilizer_Approach2.ipynb`
 - Features advanced feature engineering
 - Uses XGBoost with stratified K-fold + bagging
 - Supports GPU acceleration
 
 **For GUI Application:**
-- Open `OptimalFertilizer_GUI.ipynb`
+- Open `notebooks/03-OptimalFertilizer_GUI.ipynb`
 - Requires trained models in `models/` directory
 - Run Approach 1 first to generate model files
 - Creates interactive desktop application with Tkinter
@@ -402,7 +427,7 @@ The GUI notebook provides a user-friendly desktop application for real-time fert
 1. **Train models first**:
    ```bash
    # Run Approach 1 notebook to generate models
-   jupyter lab OptimalFertilizer_Approach1.ipynb
+   jupyter lab notebooks/01-OptimalFertilizer_Approach1.ipynb
    ```
 
 2. **Ensure models directory exists**:
@@ -437,7 +462,7 @@ The GUI notebook provides a user-friendly desktop application for real-time fert
 
 2. **Launch Jupyter and open GUI notebook**:
    ```bash
-   jupyter lab OptimalFertilizer_GUI.ipynb
+   jupyter lab notebooks/03-OptimalFertilizer_GUI.ipynb
    ```
    
    **Note:** The Jupyter Lab command is the same across all platforms once the virtual environment is activated.
@@ -465,7 +490,7 @@ The GUI notebook provides a user-friendly desktop application for real-time fert
 
 1. **Upload to Colab**
    - Go to [Google Colab](https://colab.research.google.com)
-   - Upload `OptimalFertilizer_Approach1.ipynb`
+   - Upload `notebooks/01-OptimalFertilizer_Approach1.ipynb`
 
 2. **Install dependencies**
    ```python
@@ -480,7 +505,7 @@ The GUI notebook provides a user-friendly desktop application for real-time fert
 ### For Approach 2:
 
 1. **Upload to Colab**
-   - Upload `OptimalFertilizer_Approach2.ipynb`
+   - Upload `notebooks/02-OptimalFertilizer_Approach2.ipynb`
 
 2. **Install dependencies**
    ```python
