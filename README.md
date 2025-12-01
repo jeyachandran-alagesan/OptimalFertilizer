@@ -74,8 +74,6 @@ The project implements **two distinct approaches**:
    - Weighted ensemble of XGBoost, LightGBM, and CatBoost
    - Instant top-3 fertilizer recommendations
 
-> ℹ️ **Note:** The main dataset is stored using **Git LFS**.  
-> You **must** have Git LFS installed and configured, a plain `git clone` will not download the dataset.
 ---
 
 ## Features
@@ -234,7 +232,7 @@ jupyter lab
 
 ```
 powershell
-git lfs clone <your_repo_url>.git
+git clone <your_repo_url>.git
 cd OptimalFertilizer
 ```
 
