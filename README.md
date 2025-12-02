@@ -141,9 +141,9 @@ OptimalFertilizer/
 ## Data Flow & Architecture
 
 ### Input Data
-- `data/train_kaggle.csv` – Competition training dataset
-- `data/test_kaggle.csv` – Competition test dataset
-- `data/train_ieee.csv` – Additional training data for augmentation
+- `data/train_kaggle.csv` – Competition training dataset (750000, 10)
+- `data/test_kaggle.csv` – Competition test dataset (250000, 9)
+- `data/train_ieee.csv` – Additional training data for augmentation (100000, 9)
 
 ### Features
 **Numerical Features:**
@@ -534,12 +534,12 @@ The GUI notebook provides a user-friendly desktop application for real-time fert
 - **Output**: `Approach1.csv`
 - **Score**: MAP@3 = 0.34556
 - **Models**: Ensemble of XGBoost, LightGBM, CatBoost
-- **Validation**: Multiple algorithms with hyperparameter tuning
+- **Training**: Multiple algorithms with hyperparameter tuning
 
 ### Approach 2
 - **Output**: `Approach2.csv`
-- **Score**: MAP@3 = 0.3772
-- **Model**: XGBoost with 5-fold CV × 2 bags = 10 models
+- **Score**: MAP@3 = 0.38234
+- **Model**: XGBoost with Feature Engineering and 5-fold CV × 2 bags
 - **Training**: GPU-accelerated with categorical support
 
 ---
