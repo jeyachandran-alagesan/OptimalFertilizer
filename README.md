@@ -203,7 +203,7 @@ The script will:
 
 ---
 
-### Manual Setup (<span style="color: red;">**Alternative to `setup.sh`**</span>)
+### Manual Setup (<mark>Alternative to `setup.sh`</mark>)
 
 ```bash
 python3.11 -m venv .venv
@@ -255,7 +255,7 @@ The script will:
 
 ---
 
-### Manual Setup (<span style="color: red;">**Alternative to `setup_windows.ps1`**</span>)
+### Manual Setup (<mark>Alternative to `setup_windows.ps1`</mark>)
 
 ```powershell
 # Create virtual environment
