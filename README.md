@@ -72,7 +72,7 @@ The project implements **two distinct approaches**:
    - Real-time predictions using trained ensemble models
    - Input validation for environmental and soil parameters
    - Weighted ensemble of XGBoost, LightGBM, and CatBoost
-   - Instant top-3 fertilizer recommendations
+   - Instant fertilizer recommendation
 
 ---
 
@@ -110,6 +110,7 @@ The project implements **two distinct approaches**:
   - Joblib – model serialization and loading
 - **Environment**:
   - Jupyter Lab – notebook workflow
+  - Google Colab
 
 ---
 
@@ -143,7 +144,7 @@ OptimalFertilizer/
 ### Input Data
 - `data/train_kaggle.csv` – Competition training dataset (750000, 10)
 - `data/test_kaggle.csv` – Competition test dataset (250000, 9)
-- `data/train_ieee.csv` – Additional training data for augmentation (100000, 9)
+- `data/train_ieee.csv` – Additional IEEE training data for augmentation (100000, 9)
 
 ### Features
 **Numerical Features:**
@@ -332,7 +333,7 @@ jupyter lab
 - Requires trained models in `models/` directory
 - Run Approach 1 first to generate model files
 - Creates interactive desktop application with Tkinter
-- Provides real-time fertilizer recommendations
+- Provides real-time fertilizer recommendation
 
 ### 4. Configure paths (if needed)
 
@@ -348,7 +349,7 @@ ORIGINAL_PATH = PROJECT_HOME + "/data/train_ieee.csv"
 
 - Execute cells sequentially
 - Monitor training progress and validation scores
-- Submission files will be generated in `output_dir/`
+- Submission files will be generated in `PROJECT_HOME` Path
 
 ---
 
@@ -381,7 +382,6 @@ ORIGINAL_PATH = PROJECT_HOME + "/data/train_ieee.csv"
 - **Optimization**: 
   - Early stopping with 100-round patience
   - Random parameter perturbation per bag
-  - Histogram-based tree method for speed
 
 **Best suited for:**
 - Production-ready pipelines
@@ -400,7 +400,7 @@ Where hit@k = 1 if true label is in top-k predictions, else 0
 
 ### Interactive Fertilizer Recommendation System
 
-The GUI notebook provides a user-friendly desktop application for real-time fertilizer recommendations.
+The GUI notebook provides a user-friendly desktop application for real-time fertilizer recommendation.
 
 **Features:**
 - **Input Fields**:
@@ -410,8 +410,8 @@ The GUI notebook provides a user-friendly desktop application for real-time fert
   - Nitrogen content (0-150 ppm)
   - Potassium content (0-150 ppm)
   - Phosphorous content (0-150 ppm)
-  - Soil Type (Sandy, Clay, Loamy, Black, Red)
-  - Crop Type (Barley, Wheat, Maize, Cotton, Sugarcane, Millets, Ground Nut, Tobacco)
+  - Soil Type (Black, Clay, Loamy, Red, Sandy)
+  - Crop Type (Barley, Cotton, Ground Nut, Maize, Millets, Oil seeds, Paddy, Pulses, Sugarcane, Tobacco, Wheat)
 
 - **Input Validation**: Real-time validation of numeric ranges
 - **Ensemble Prediction**: Weighted combination of three models:
